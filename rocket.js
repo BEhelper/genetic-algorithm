@@ -40,8 +40,10 @@ function Rocket(dna) {
       //lifespan
        // brad
       this.fitness *= (10 + (10 * durrationFraction)); // brad add
+      //brad
       if (rw <= 250) {
-        rw += 5
+        rw += 2;
+        rx -= 1;
       }
     }
     // If rocket does not get to target decrease fitness
