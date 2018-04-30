@@ -35,7 +35,8 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  //background(0);
+  background(color(0, 0, 255));
   population.run();
   // Displays count to window
   lifeP.html(count);
@@ -60,6 +61,7 @@ function draw() {
   rect(rx, ry, rw, rh);
   // Renders target
   ellipse(target.x, target.y, 16, 16);
-  fill(color(0, 0, 255));
+  //fill(color(0, 0, 255));
+  fill('rgba(0,255,0, 0.25)');
   ellipse(200, 300, 400, 50);
 }
