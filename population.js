@@ -10,12 +10,25 @@ function Population() {
   this.popsize = 25;
   // Amount parent rocket partners
   this.matingpool = [];
+  
+  this.allcrashed = false;
 
   // Associates a rocket to an array index
   for (var i = 0; i < this.popsize; i++) {
     this.rockets[i] = new Rocket();
   }
-
+  
+  
+  this.grouphealth = function() {
+    this.allcrashed = true;
+    // Iterate through all rockets and calcultes their fitness
+    for (var i = 0; i < this.popsize; i++) {
+      if (this.rockets[i].crashed==false){
+        this.allcrashed = false;
+      }
+    }
+  }
+  
   this.evaluate = function() {
 
     var maxfit = 0;
