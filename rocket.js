@@ -35,14 +35,18 @@ function Rocket(dna) {
     // Maps range of fitness
     this.fitness = map(d, 0, width, width, 0);
     // If rocket gets to target increase fitness of rocket
+    var durrationFraction = 1 - (this.durration / lifespan);
     if (this.completed) {
       //lifespan
-      var durrationFraction = 1 - (this.durration / 400); // brad
+       // brad
       this.fitness *= (10 + (10 * durrationFraction)); // brad add
+      if (rw <= 250) {
+        rw += 5
+      }
     }
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
-      this.fitness /= 10;
+      this.fitness /= (5 + (5 * durrationFraction)) ; // if durration long, less problem
     }
 
   }
