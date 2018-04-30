@@ -13,6 +13,8 @@ function Rocket(dna) {
   this.completed = false;
   // Checks if rocket had crashed
   this.crashed = false;
+  
+  this.mindistance = 10000;
   // Gives a rocket dna
   if (dna) {
     this.dna = dna;
@@ -31,7 +33,7 @@ function Rocket(dna) {
   this.calcFitness = function() {
     // Takes distance to target
     var d = dist(this.pos.x, this.pos.y, target.x, target.y);
-
+   
     // Maps range of fitness
     this.fitness = map(d, 0, width, width, 0);
     // If rocket gets to target increase fitness of rocket
@@ -39,6 +41,7 @@ function Rocket(dna) {
     if (this.completed) {
       //lifespan
        // brad
+      // closest approach 
       this.fitness *= (10 + (10 * durrationFraction)); // brad add
       //brad
       if (rw <= 250) {
@@ -49,6 +52,8 @@ function Rocket(dna) {
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
       this.fitness /= (5 + (5 * durrationFraction)) ; // if durration long, less problem
+      this.fitness += (100 - this.mindistance)
+      
     }
 
   }
@@ -61,6 +66,11 @@ function Rocket(dna) {
       this.completed = true;
       this.pos = target.copy();
     }
+    // see if its the closest approach, nudge those that got closer
+    if (d < this.mindistance){
+      this.mindistance = d;
+    }
+    
     // Rocket hit the barrier
     if (this.pos.x > rx && this.pos.x < rx + rw && this.pos.y > ry && this.pos.y < ry + rh) {
       this.crashed = true;
