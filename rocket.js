@@ -38,7 +38,7 @@ function Rocket(dna) {
     if (this.completed) {
       //lifespan
       var durrationFraction = 1 - (this.durration / 400); // brad
-      this.fitness *= (10 * durrationFraction); // brad add
+      this.fitness *= (10 + (10 * durrationFraction)); // brad add
     }
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
