@@ -63,6 +63,6 @@ function draw() {
   ellipse(target.x, target.y, 16, 16);
   //fill(color(0, 0, 255));
   //fill('rgba(0,255,0, 0.85)');
-  fill('rgb(0%,0%,100%,0.9)');
+  fill('rgb(10%,40%,100%,0.9)');
   ellipse(200, 300, 400, 50);
 }
