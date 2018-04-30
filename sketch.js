@@ -21,7 +21,7 @@ var maxforce = 0.2;
 // Dimensions of barrier
 var rx = 100;
 var ry = 150;
-var rw = 200;
+var rw = 50;
 var rh = 10;
 
 function setup() {
@@ -40,8 +40,13 @@ function draw() {
   lifeP.html(count);
   genP.html(generation);
   
-  
   count++;
+  
+  population.grouphealth(); // brad
+  if (population.allcrashed==true) {
+    count = lifespan;
+  }
+  
   if (count == lifespan) {
     population.evaluate();
     population.selection();
