@@ -60,5 +60,6 @@ function draw() {
   rect(rx, ry, rw, rh);
   // Renders target
   ellipse(target.x, target.y, 16, 16);
-  ellipse(150, 300, 100, 50);
+  fill(color(0, 0, 255));
+  ellipse(200, 300, 400, 50);
 }
