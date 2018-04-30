@@ -109,8 +109,11 @@ function Rocket(dna) {
     //rotatates to the angle the rocket is pointing
     rotate(this.vel.heading());
     //creates a rectangle shape for rocket
-    rectMode(CENTER);
-    rect(0, 0, 25, 5);
+    //rectMode(CENTER);
+    var arrowSize = 7;
+    triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
+    ellipseMode(CENTER);
+    ellipse(0, 0, 25, 5);
     pop();
   }
 
