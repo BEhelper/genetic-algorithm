@@ -20,6 +20,8 @@ function Rocket(dna) {
     this.dna = new DNA();
   }
   this.fitness = 0;
+  
+  this.durration = 0;
 
   // Object can recieve force and add to acceleration
   this.applyForce = function(force) {
@@ -34,7 +36,9 @@ function Rocket(dna) {
     this.fitness = map(d, 0, width, width, 0);
     // If rocket gets to target increase fitness of rocket
     if (this.completed) {
-      this.fitness *= 10;
+      //lifespan
+      var durrationFraction = 1 - (this.durration / 400); // brad
+      this.fitness *= (10 * durrationFraction); // brad add
     }
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
@@ -73,6 +77,8 @@ function Rocket(dna) {
       this.pos.add(this.vel);
       this.acc.mult(0);
       this.vel.limit(4);
+      this.durration += 1; //Brad
+      
     }
   }
   // displays rocket to window
