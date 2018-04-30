@@ -52,7 +52,7 @@ function Rocket(dna) {
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
       this.fitness /= (5 + (5 * durrationFraction)) ; // if durration long, less problem
-      //this.fitness += ((100 - this.mindistance)/10)
+      this.fitness += ((100 - this.mindistance)/2)
       
     }
 
