@@ -26,6 +26,7 @@ var rh = 10;
 
 function setup() {
   createCanvas(400, 300);
+  background(color(0, 0, 255));
   population = new Population();
   lifeP = createP();
   genP = createP();
@@ -59,4 +60,5 @@ function draw() {
   rect(rx, ry, rw, rh);
   // Renders target
   ellipse(target.x, target.y, 16, 16);
+  ellipse(150, 300, 100, 50);
 }
