@@ -19,7 +19,7 @@ var target;
 var maxforce = 0.2;
 
 // Dimensions of barrier
-var rx = 100;
+var rx = 175;
 var ry = 150;
 var rw = 50;
 var rh = 10;
