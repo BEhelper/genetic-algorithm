@@ -8,8 +8,11 @@ var population;
 var lifespan = 600;
 // Made to display count on screen
 var lifeP;
-// Keeps track of frames
+// Keeps track of frame
 var count = 0;
+// keep track of generations
+var generation = 0;
+var genP;
 // Where rockets are trying to go
 var target;
 // Max force applied to rocket
@@ -25,6 +28,7 @@ function setup() {
   createCanvas(400, 300);
   population = new Population();
   lifeP = createP();
+  genP = createP();
   target = createVector(width / 2, 50);
 
 }
@@ -34,13 +38,16 @@ function draw() {
   population.run();
   // Displays count to window
   lifeP.html(count);
-
+  genP.html(generation);
+  
+  
   count++;
   if (count == lifespan) {
     population.evaluate();
     population.selection();
     // Population = new Population();
     count = 0;
+    generation++;
   }
   // Renders barrier for rockets
   fill(255);
