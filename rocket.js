@@ -44,10 +44,10 @@ function Rocket(dna) {
       // closest approach 
       this.fitness *= (10 + (10 * durrationFraction)); // brad add
       //brad
-      //if (rw <= 250) {
-      //  rw += 2;
-      //  rx -= 1;
-      //}
+      if (rw <= 250) {
+        rw += 2;
+        rx -= 1;
+      }
     }
     // If rocket does not get to target decrease fitness
     if (this.crashed) {
