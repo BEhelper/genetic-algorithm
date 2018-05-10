@@ -23,6 +23,7 @@ function Population() {
     this.allcrashed = true;
     // Iterate through all rockets and calcultes their fitness
     for (var i = 0; i < this.popsize; i++) {
+      // make target bigger here once, if one is completed
       if (this.rockets[i].crashed==false) {
         if (this.rockets[i].completed==false) {
           this.allcrashed = false;
