@@ -20,6 +20,7 @@ function Population() {
   
   
   this.grouphealth = function() {
+    var sucessrate = 0;
     this.allcrashed = true;
     // Iterate through all rockets and calcultes their fitness
     for (var i = 0; i < this.popsize; i++) {
@@ -28,6 +29,16 @@ function Population() {
         if (this.rockets[i].completed==false) {
           this.allcrashed = false;
         }  
+      }
+      
+      if (this.rockets[i].completed==true) {
+          sucessrate += 1
+      }
+    }
+    if (sucessrate>0){
+       if (rw <= 250) {
+        rw += 2;
+        rx -= 1;
       }
     }
   }
