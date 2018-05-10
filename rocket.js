@@ -113,7 +113,7 @@ function Rocket(dna) {
     //var arrowSize = 7;
     //triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
     //ellipseMode(CENTER);
-    rect(0, 0, 25, 5);
+    rect(0, 0, 30, 5);
     pop();
   }
 
